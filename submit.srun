@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#SBATCH --nodes=1
+#SBATCH --time=00:20:00
+#SBATCH --partition=standard
+#SBATCH --qos=short
+#SBATCH --exclusive
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --account=
+
+module load oneapi
+module load compiler/2024.0.2
+
+srun ./build/md
